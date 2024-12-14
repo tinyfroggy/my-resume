@@ -3,7 +3,7 @@ import Cards from './Cards'
 
 function MoreProjects() {
   return (
-    <div className='grid-cols-3 grid-rows-3 h-screen w-screen'>
+    <div className='bg-main'>
       <Cards/>
     </div>
   )

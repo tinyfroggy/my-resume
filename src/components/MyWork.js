@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router'
 
 const cards =
   [
@@ -32,7 +33,7 @@ function MyWork() {
       <div className="mt-64 mb-5 relative">
 
         <div className='flex justify-between'>
-          <h1 className="text-white text-7xl mb-4">Selected Work</h1>
+          <h1 className="text-white text-7xl  mb-4">Selected Work</h1>
 
           {/* butfly */}
           <div className="flex justify-end items-center">
@@ -50,10 +51,11 @@ function MyWork() {
 
             {cards.map((info) => (
               <div key={info.id} className='borderHoverE'>
-                {/* card */}
-                <div className="border-4 border-white flex flex-col justify-center w-96 ">
 
-                  <a href={info.link}>
+                {/* card */}
+                <div className="border-4  border-white flex flex-col justify-center w-96 ">
+
+                  <a href={info.link} target="_blank" rel='noreferrer'>
                     {/* img */}
                     <img className="w-full" src={process.env.PUBLIC_URL + info.srcImg} alt={info.title} />
                     {/* === img === */}
@@ -61,7 +63,7 @@ function MyWork() {
                     {/* info */}
                     <div className="text-white w-full h-52 p-2">
                       <h2 className="text-xl mt-5 mb-5">{info.title}</h2>
-                      <p>{info.description}</p>
+                      <p className='text-sm'>{info.description}</p>
                     </div>
                     {/* === info === */}
                   </a>
@@ -74,7 +76,9 @@ function MyWork() {
           </div>
           {/* === cards === */}
 
-          <button className="mt-5 mb-9 border-4 border-white text-white p-3 hover:bg-white hover:text-main" >See More</button>
+          <NavLink to={"/moreProjects"}>
+            <button className="mt-5 mb-9 border-4 border-white text-white p-3 hover:bg-white hover:text-main" >See More</button>
+          </NavLink>
 
         </div>
         {/* === container cards === */}

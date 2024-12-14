@@ -1,54 +1,29 @@
-import Face from "./components/Face";
-import MyWork from "./components/MyWork";
-import Navbar from "./components/Navbar";
-import WhoIsKamel from "./components/WhoIsKamel";
-import GetInTouch from "./components/GetInTouch";
-import MyFooter from "./components/MyFooter";
-import WorkInfoContext from "./context/WorkInfoContext";
-import { WorkInfo } from "./context/WorkInfoContext";
 import MoreProjects from "./components/MoreProjects";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import MyFooter from "./components/MyFooter";
+import GetInTouch from "./components/GetInTouch";
+import Resume from "./components/Resume";
 
 
 function App() {
 
   return (
     <>
-      {/*  main container */}
-      <WorkInfoContext.Provider value={WorkInfo}>
-        <div className="bg-main pr-10 pl-10 flex justify-center items-center flex-col">
+      <Router>
+        <Navbar />
 
-          <div className="w-5/6 pl-20 pr-20 ">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/moreProjects" element={<MoreProjects />} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
 
-            {/* Navbar */}
-            <Navbar />
-            {/* === Navbar === */}
+        <GetInTouch/>
 
-            {/* face */}
-            <Face />
-            {/* === face === */}
-
-            {/* select work  */}
-            <MyWork />
-            {/* === select work */}
-
-            {/* who is kamel */}
-            <WhoIsKamel />
-            {/* === who is kamel === */}
-
-            {/* get in touch */}
-            <GetInTouch />
-            {/* === get in touch === */}
-
-            {/* footer */}
-            <MyFooter />
-            {/* === footer === */}
-
-          </div>
-
-        </div>
-      </WorkInfoContext.Provider>
-      {/* === main container === */}
+        <MyFooter/>
+      </Router>
     </>
   );
 }

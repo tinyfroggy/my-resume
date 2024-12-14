@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-scroll';
 
 function WhoIsKamel() {
   return (
@@ -23,12 +24,24 @@ function WhoIsKamel() {
 
           {/* info div red */}
           <div className="text-white w-2/4 p-5">
-            <h1 className="text-4xl mb-3">who is kamle</h1>
-            <p className="mb-4 text-lg">Jey Austen is a senior web designer and illustrator from howdy and rowdy Austin, Texas. Currently accepting clients and full time opportunities.</p>
-            <p className="mb-4 text-lg">With 10+ years of creative experience across multiple industries – athletics, entertainment, and fintech,
-              for starters – Jey has seen some shit, and loves learning new things and thinking on their feet.</p>
-            <p className="mb-4 text-lg">Jey loves teaching creatives, and mentoring designers on best practices in Figma and Procreate. While you're here, be sure to say hi, especially if you're in education, activism, or entertainment!</p>
-            <button className="border-4 border-white p-2 hover:bg-white hover:text-main">get in to</button>
+            <h1 className="text-4xl mb-3 font-bold">Who is Kamel?</h1>
+            <p className="mb-4 text-lg">
+              <strong className='highlight'>Kamel Mohammed</strong> is a passionate designer and developer based in Jeddah, Saudi Arabia.
+            </p>
+            <p className="mb-4 text-lg">
+              Although he has <strong className='highlight'>no formal industry experience</strong>, he has worked extensively on personal projects and side practices, constantly sharpening his skills.
+            </p>
+            <p className="mb-4 text-lg">
+              Kamel enjoys creating simple, user-friendly designs and is always eager to learn new things. While you're here, feel free to <strong className='highlight'>say hi!</strong>
+            </p>
+
+            <Link
+              to="getInTouch"
+              smooth={true}
+              duration={700}>
+              <button className="border-4 border-white p-2 hover:bg-white hover:text-main">Get In Touch</button>
+            </Link>
+
           </div>
           {/* === info div === */}
 

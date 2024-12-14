@@ -30,3 +30,21 @@ h1 {
   font-family: "Pirata One";
   src: url(/fonts/PirataOne-Regular.ttf);
 }
+
+.resumeH1{
+  font-size: 4.5rem;
+  margin-top: 1rem;
+}
+
+.resumeH2{
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.resumeH3{
+  font-size: 1rem;
+}
+.highlight {
+  color: #FF5733;
+  font-weight: bold;
+}

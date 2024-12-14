@@ -33,12 +33,12 @@ function GetInTouch() {
   return (
     <>
       {/* get in touch red */}
-      <div className=" h-144 mb-10 flex justify-center items-center" id="getInTouch" >
+      <div className=" h-144 flex justify-center items-center bg-main " id="getInTouch" >
 
         {/* title and info green  */}
         <div className="w-1/3 p-5 h-96 flex flex-col justify-center" >
           <h1 className="text-6xl text-white mb-3 ">Get In Touch</h1>
-          <p className="text-white text-md">Currently open to mentorship opportunities, freelance, and remote brand and web roles on LGBTQ+ inclusive design teams</p>
+          <p className="text-white text-md">Currently open to <strong className='highlight'>Freelance</strong> work or <strong className='highlight'>collaborations</strong>.</p>
         </div>
         {/* === title and info === */}
 
