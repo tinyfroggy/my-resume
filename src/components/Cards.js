@@ -5,17 +5,17 @@ function Cards() {
   const workInfo = useContext(WorkInfoContext);
 
   return (
-    <>
+    <> 
       {/* container cards */}
-      <div className='w-5/6 pl-14 pr-10 pt-5 '>
+      <div className='w-5/6 pl-14 lg:pr-10 pt-5 '>
 
           {/* cards */}
-          <div className='grid grid-cols-3 grid-rows-3 w-screen gap-10 h-288'>
+          <div className='grid grid-cols-1 grid-rows-1 gap-2 lg:grid-cols-3 lg:grid-rows-3 lg:w-screen lg:gap-10 lg:h-288'>
 
             {workInfo.map((info) => (
-              <div key={info.id} className='borderHoverE w-97 h-98'>
+              <div key={info.id} className='borderHoverE lg:w-97 lg:h-98'>
                 {/* card */}
-                <div className="border-4 border-white flex flex-col justify-center w-96 ">
+                <div className="border-2  lg:border-4 border-white flex flex-col justify-center lg:w-96 ">
 
                   <a href={info.link} target="_blank" rel='noreferrer'>
                     {/* img */}
@@ -24,8 +24,8 @@ function Cards() {
 
                     {/* info */}
                     <div className="text-white w-full h-52 p-2">
-                      <h2 className="text-xl mt-5 mb-5">{info.title}</h2>
-                    <p>{info.description}</p>
+                      <h2 className="text-lg lg:text-xl mt-5 mb-5">{info.title}</h2>
+                    <p className='text-sm lg:text-md'>{info.description}</p>
                     </div>
                     {/* === info === */}
                   </a>

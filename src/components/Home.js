@@ -9,9 +9,9 @@ function Home() {
     <>
       {/*  main container */}
       <WorkInfoContext.Provider value={WorkInfo}>
-        <div className="bg-main pr-10 pl-10 flex justify-center items-center flex-col">
+        <div className="bg-main lg:pr-10 lg:pl-10 flex justify-center items-center flex-col">
 
-          <div className="w-5/6 pl-20 pr-20 ">
+          <div className="w-5/6 lg:pl-20 lg:pr-20 ">
 
             {/* face */}
             <Face />

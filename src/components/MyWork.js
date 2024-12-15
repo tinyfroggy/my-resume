@@ -33,7 +33,7 @@ function MyWork() {
       <div className="mt-64 mb-5 relative">
 
         <div className='flex justify-between'>
-          <h1 className="text-white text-7xl  mb-4">Selected Work</h1>
+          <h1 className="text-white lg:text-7xl text-5xl mb-4">Selected Work</h1>
 
           {/* butfly */}
           <div className="flex justify-end items-center">
@@ -44,16 +44,16 @@ function MyWork() {
         </div>
 
         {/* container cards */}
-        <div className="absolute top-40">
+        <div className="absolute top-24 lg:top-40">
 
           {/* cards */}
-          <div className='flex gap-2'>
+          <div className='grid grid-rows-1 lg:flex gap-2'>
 
             {cards.map((info) => (
               <div key={info.id} className='borderHoverE'>
 
                 {/* card */}
-                <div className="border-4  border-white flex flex-col justify-center w-96 ">
+                <div className="border-4  border-white flex flex-col justify-center lg:w-96  ">
 
                   <a href={info.link} target="_blank" rel='noreferrer'>
                     {/* img */}
