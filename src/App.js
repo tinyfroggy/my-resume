@@ -1,28 +1,37 @@
 import MoreProjects from "./components/MoreProjects";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./components/Home";
-import Navbar from "./components/Navbar";
-import MyFooter from "./components/MyFooter";
-import GetInTouch from "./components/GetInTouch";
-import Resume from "./components/Resume";
+import { useState } from "react";
+import GetInTouchContext from "./context/GetInTouchContext";
+import MyFooterContext from "./context/MyFooterContext";
+import ResumeContext from "./context/ResumeContext";
+import NavbarContext from "./context/NavbarContext";
 
 
 function App() {
 
+  const [language, setLanguage] = useState("Arabic");
+
+  const handleLanguageChange = () => {
+    setLanguage((prevLanguage) =>
+      prevLanguage === "Arabic" ? "English" : "Arabic"
+    );
+  };
+
   return (
     <>
       <Router>
-        <Navbar />
+        <NavbarContext language={language} onToggle={handleLanguageChange} /> 
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/moreProjects" element={<MoreProjects />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route path="/" element={<Home language={language}  />} />
+          <Route path="/moreProjects" element={<MoreProjects language={language} />} />
+          <Route path="/resume" element={<ResumeContext language={language} />} />
         </Routes>
 
-        <GetInTouch/>
+        <GetInTouchContext language={language} />
 
-        <MyFooter/>
+        <MyFooterContext language={language} />
       </Router>
     </>
   );

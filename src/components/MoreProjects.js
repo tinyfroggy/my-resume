@@ -1,10 +1,11 @@
 import React from 'react'
 import Cards from './Cards'
+import CardsAr from './CardsAr'
 
-function MoreProjects() {
+function MoreProjects({language}) {
   return (
     <div className='bg-main'>
-      <Cards/>
+      {language === "Arabic" ? <CardsAr /> : <Cards />}
     </div>
   )
 }

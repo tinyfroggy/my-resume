@@ -31,6 +31,57 @@ h1 {
   src: url(/fonts/PirataOne-Regular.ttf);
 }
 
+@font-face{
+  font-family: "ArB";
+  src: url(/fonts/ElMessiri-Bold.ttf);
+}
+
+@font-face{
+  font-family: "ArM";
+  src: url(/fonts/ElMessiri-Medium.ttf);
+}
+
+@font-face{
+  font-family: "ArS";
+  src: url(/fonts/ElMessiri-SemiBold.ttf);
+}
+
+/* Ar */
+.resumeH1Ar{
+  font-family: "ArB";
+  font-size: 4.5rem;
+  margin-top: 1rem;
+}
+
+.resumeH1MobileAr{
+  font-family: "ArB";
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.resumeH2Ar{
+  font-family: "ArS";
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.resumeH2MobileAr{
+  font-family: "ArS";
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.resumeH3Ar{
+  font-family: "ArM";
+  font-size: 1rem;
+}
+
+.resumeH3MobileAr{
+  font-family: "ArM";
+  font-size: 0.75rem;
+}
+
+/* En */
 .resumeH1{
   font-size: 4.5rem;
   margin-top: 1rem;
