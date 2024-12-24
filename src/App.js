@@ -1,37 +1,46 @@
 import MoreProjects from "./components/MoreProjects";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./components/Home";
-import { useState } from "react";
-import GetInTouchContext from "./context/GetInTouchContext";
-import MyFooterContext from "./context/MyFooterContext";
-import ResumeContext from "./context/ResumeContext";
-import NavbarContext from "./context/NavbarContext";
+import {  useState , useEffect } from "react";
+import Navbar from "./components/Navbar";
+import { useTranslation } from 'react-i18next';
+import Resume from "./components/Resume";
+import GetInTouch from "./components/GetInTouch";
+import MyFooter from "./components/MyFooter";
 
 
 function App() {
 
-  const [language, setLanguage] = useState("Arabic");
+  const { t, i18n } = useTranslation();
+
+  const storedLanguage = localStorage.getItem("language") || "Arabic";
+  const [language, setLanguage] = useState(storedLanguage);
 
   const handleLanguageChange = () => {
-    setLanguage((prevLanguage) =>
-      prevLanguage === "Arabic" ? "English" : "Arabic"
-    );
+    const newLanguage = language === "Arabic" ? "English" : "Arabic";
+    setLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage === "Arabic" ? "ar" : "en");
+
+    localStorage.setItem("language", newLanguage);
   };
 
+  useEffect(() => {
+    document.documentElement.dir = language === "Arabic" ? "rtl" : "ltr";
+  }, [language])
   return (
     <>
       <Router>
-        <NavbarContext language={language} onToggle={handleLanguageChange} /> 
+      <Navbar language={language} onToggle={handleLanguageChange} t={t}/>
 
         <Routes>
-          <Route path="/" element={<Home language={language}  />} />
-          <Route path="/moreProjects" element={<MoreProjects language={language} />} />
-          <Route path="/resume" element={<ResumeContext language={language} />} />
+          <Route path="/" element={<Home  t={t}  />} />
+          <Route path="/moreProjects" element={<MoreProjects  t={t} />} />
+          <Route path="/resume" element={<Resume  t={t} />} />
         </Routes>
 
-        <GetInTouchContext language={language} />
+        <GetInTouch  t={t} />
 
-        <MyFooterContext language={language} />
+        <MyFooter  t={t} />
       </Router>
     </>
   );

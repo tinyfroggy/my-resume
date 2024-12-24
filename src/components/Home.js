@@ -1,10 +1,10 @@
 import FaceContext from "../context/FaceContext";
-import MyWorkContext from "../context/MyWorkContext";
-import WhoIsKamelContext from "../context/WhoIsKamelContext";
 import WorkInfoContext from "../context/WorkInfoContext";
 import { WorkInfo } from "../context/WorkInfoContext";
+import MyWork from "./MyWork";
+import WhoIsKamel from "./WhoIsKamel";
 
-function Home({language}) {
+function Home({ t}) {
   return (
     <>
       {/*  main container */}
@@ -14,15 +14,15 @@ function Home({language}) {
           <div className="w-5/6 lg:pl-20 lg:pr-20">
 
             {/* face */}
-            <FaceContext language={language} />
+            <FaceContext t={t} />
             {/* === face === */}
 
             {/* select work  */}
-            <MyWorkContext language={language} />
+            <MyWork t={t} />
             {/* === select work */}
 
             {/* who is kamel */}
-            <WhoIsKamelContext language={language} />
+            <WhoIsKamel t={t} />
             {/* === who is kamel === */}
 
           </div>

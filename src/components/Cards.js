@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import WorkInfoContext from '../context/WorkInfoContext';
 
-function Cards() {
+function Cards({ t }) {
   const workInfo = useContext(WorkInfoContext);
 
   return (
@@ -24,8 +24,8 @@ function Cards() {
 
                     {/* info */}
                     <div className="text-white w-full h-52 p-2">
-                      <h2 className="text-lg lg:text-xl mt-5 mb-5">{info.title}</h2>
-                    <p className='text-sm lg:text-md'>{info.description}</p>
+                      <h2 className="text-lg lg:text-xl mt-5 mb-5">{t(info.title)}</h2>
+                      <p className='text-sm lg:text-md'>{t(info.description)}</p>
                     </div>
                     {/* === info === */}
                   </a>

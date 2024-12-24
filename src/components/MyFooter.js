@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll';
 
-function MyFooter() {
+function MyFooter({t}) {
   const email = "k70598945@gmail.com";
 
   const handleEmailClick = () => {
@@ -17,7 +17,7 @@ function MyFooter() {
         {/* social media */}
         <div>
 
-          <h1 className="lg:text-5xl sm:text-md text-white cursor-pointer mb-5">My Social Media Accounts</h1>
+          <h1 className="lg:text-5xl sm:text-md text-white cursor-pointer mb-5">{t("My Social Media Accounts")}</h1>
 
           {/* icons */}
           <div className="lg:flex grid grid-cols-2 lg:gap-10 sm:gap-3 h-20 mb-3">
@@ -113,7 +113,7 @@ function MyFooter() {
             smooth={true}
             duration={700}
           >
-            <button className="border-4 border-white text-white p-2 hover:bg-white hover:text-main absolute top-80 lg:right-14 z-10 bg-main sm:w-32 right-10 ">Back To Top</button>
+            <button className="border-4 border-white text-white p-2 hover:bg-white hover:text-main absolute top-80 lg:right-14 z-10 bg-main sm:w-32 right-10 ">{t("Back To Top")}</button>
           </Link>
 
         </div>
